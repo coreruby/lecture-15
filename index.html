@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Object Model</title>
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <link href="css/reveal.css" rel="stylesheet" />
+    <link href="css/simple.css" rel="stylesheet" />
+    <link href="css/googlecode.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section class="center" data-background="#000">
+  <h2 class="white">
+    Object Model
+  </h2>
+</section>
+<section class="center">
+  <p>
+    This lecture is a short one
+  </p>
+</section>
+<section class="center">
+  <p>
+    But a really, really important one
+  </p>
+</section>
+<section class="center" data-background="#000">
+  <h2 class="white">
+    Questions
+  </h2>
+</section>
+<section class="center">
+  <pre><code class="ruby" contenteditable="true">def element(**attributes)
+  attributes
+end </code></pre>
+</section>
+<section class="center">
+  <p>
+    What is a scope gate?
+  </p>
+</section>
+<section class="center">
+  <p>
+    Which are the keywords that introduce scope gates?
+  </p>
+</section>
+<section class="center">
+  <pre><code class="ruby" contenteditable="true">def feed(*meals)
+  super
+end </code></pre>
+</section>
+<section class="center">
+  <pre><code class="ruby" contenteditable="true">def feed(*meals)
+  super()
+end </code></pre>
+</section>
+<section class="center">
+  <pre><code class="ruby" contenteditable="true">def feed(*)
+  super
+end </code></pre>
+</section>
+<section class="center">
+  <pre><code class="ruby" contenteditable="true">o = Object.new
+
+def o.to_a
+  [o]
+end </code></pre>
+</section>
+<section class="center">
+  <pre><code class="ruby" contenteditable="true">o = Object.new
+
+class << o
+  def to_a
+    [o]
+  end
+end </code></pre>
+</section>
+<section class="center">
+  <pre><code class="ruby" contenteditable="true">result = class Foo
+  self
+end
+
+Foo == result </code></pre>
+</section>
+<section class="center">
+  <p>
+    What does instance_eval does?
+  </p>
+</section>
+<section class="center">
+  <p>
+    What does class_eval does?
+  </p>
+</section>
+<section class="center">
+  <p>
+    What's the difference?
+  </p>
+</section>
+<section class="center">
+  <p>
+    What's an eigenclass
+  </p>
+</section>
+<section class="center">
+  <img class="inline" src="img/troll.png" />
+</section>
+<section class="center" data-background="#F00">
+  <h2 class="white">
+    Object Model
+  </h2>
+</section>
+<section>
+  <h2>
+    Class#superclass
+  </h2>
+  <p>
+    Returns the superclass of class
+  </p>
+</section>
+<section>
+  <h2>
+    Class#superclass
+  </h2>
+  <p>
+    Returns nil on BasicObject
+  </p>
+</section>
+<section class="center">
+  <pre><code class="ruby" contenteditable="true">File.superclass          #=> IO
+IO.superclass            #=> Object
+Object.su.perclass       #=> BasicObject
+class Foo; end
+class Bar < Foo; end
+Bar.superclass           a=> Foo </code></pre>
+</section>
+<section class="center">
+  <img class="inline" src="http://fmi.ruby.bg/lectures/13/class-metaclass-superclass.svg" />
+</section>
+<section class="center" data-background="#000">
+  <p class="white">
+    If an object has a singleton class, the method lookup happens on its ancestor chain
+  </p>
+</section>
+<section class="center" data-background="#000">
+  <p class="white">
+    The super class of the singleton class is the singleton class of the super class
+  </p>
+</section>
+<section class="center" data-background="#000">
+  <p class="white">
+    Write this one down
+  </p>
+</section>
+<section class="center" data-background="#000">
+  <p class="white">
+    Remember it at your sleep
+  </p>
+</section>
+<section class="center" data-background="#000">
+  <p class="white">
+    Ladies love it when you say it
+  </p>
+</section>
+<section class="center" data-background="#000">
+  <p class="white">
+    Geeks get impressed
+  </p>
+</section>
+<section class="center" data-background="#000">
+  <p class="white">
+    Huge reputation boost, guaranteed
+  </p>
+</section>
+<section data-background="http://replygif.net/i/411.gif"></section>
+      </div>
+    </div>
+    <script src="js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script type="text/javascript">
+      Reveal.initialize({
+        width:  '100%',
+        height: '100%',
+        margin: 0.05,
+        controls: false,
+        progress: false,
+        history: true,
+        center: false,
+        rollingLinks: true,
+        transition: 'none',
+        backgroundTransition: 'none',
+        dependencies: [
+          {
+            src: 'js/highlight.js',
+            async: true,
+            callback: function() {
+              hljs.configure({ languages: ['ruby'] });
+              hljs.initHighlightingOnLoad();
+            }
+          }
+        ]
+      });
+    </script>
+  </body>
+</html>

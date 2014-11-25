@@ -1,0 +1,136 @@
+section.center data-background="#000"
+  h2.white Object Model
+
+section.center
+  p This lecture is a short one
+
+section.center
+  p But a really, really important one
+
+section.center data-background="#000"
+  h2.white Questions
+
+section.center
+  pre: code.ruby contenteditable="true"
+    '
+      def element(**attributes)
+        attributes
+      end
+
+section.center
+  p What is a scope gate?
+
+section.center
+  p Which are the keywords that introduce scope gates?
+
+section.center
+  pre: code.ruby contenteditable="true"
+    '
+      def feed(*meals)
+        super
+      end
+
+section.center
+  pre: code.ruby contenteditable="true"
+    '
+      def feed(*meals)
+        super()
+      end
+
+section.center
+  pre: code.ruby contenteditable="true"
+    '
+      def feed(*)
+        super
+      end
+
+section.center
+  pre: code.ruby contenteditable="true"
+    '
+      o = Object.new
+
+      def o.to_a
+        [o]
+      end
+
+section.center
+  pre: code.ruby contenteditable="true"
+    '
+      o = Object.new
+
+      class << o
+        def to_a
+          [o]
+        end
+      end
+
+section.center
+  pre: code.ruby contenteditable="true"
+    '
+      result = class Foo
+        self
+      end
+
+      Foo == result
+
+section.center
+  p What does instance_eval does?
+
+section.center
+  p What does class_eval does?
+
+section.center
+  p What's the difference?
+
+section.center
+  p What's an eigenclass
+
+section.center
+  img.inline src="img/troll.png"
+
+section.center data-background="#F00"
+  h2.white Object Model
+
+section
+  h2 Class#superclass
+  p Returns the superclass of class
+
+section
+  h2 Class#superclass
+  p Returns nil on BasicObject
+
+section.center
+  pre: code.ruby contenteditable="true"
+    '
+      File.superclass          #=> IO
+      IO.superclass            #=> Object
+      Object.su.perclass       #=> BasicObject
+      class Foo; end
+      class Bar < Foo; end
+      Bar.superclass           a=> Foo
+
+section.center
+  img.inline src="http://fmi.ruby.bg/lectures/13/class-metaclass-superclass.svg"
+
+section.center data-background="#000"
+  p.white If an object has a singleton class, the method lookup happens on its ancestor chain
+
+section.center data-background="#000"
+  p.white The super class of the singleton class is the singleton class of the super class
+
+section.center data-background="#000"
+  p.white Write this one down
+
+section.center data-background="#000"
+  p.white Remember it at your sleep
+
+section.center data-background="#000"
+  p.white Ladies love it when you say it
+
+section.center data-background="#000"
+  p.white Geeks get impressed
+
+section.center data-background="#000"
+  p.white Huge reputation boost, guaranteed
+
+section data-background="http://replygif.net/i/411.gif"
